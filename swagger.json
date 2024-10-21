@@ -5,7 +5,7 @@
     "description": "Restaurants Api",
     "version": "1.0.0"
   },
-  "host": "cse341-jaredkeh.onrender.com",
+  "host": "mcrestaurant.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -42,19 +42,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "foodtype": {
                   "example": "any"
                 },
-                "email": {
+                "foodtype2": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "hoursopen": {
                   "example": "any"
                 },
-                "birthday": {
+                "daysopen": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
@@ -106,19 +112,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "foodtype": {
                   "example": "any"
                 },
-                "email": {
+                "foodtype2": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "hoursopen": {
                   "example": "any"
                 },
-                "birthday": {
+                "daysopen": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
