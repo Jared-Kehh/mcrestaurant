@@ -1,9 +1,9 @@
-const { response } = require('express');
+
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db().collection('contacts').find();
+  const result = await mongodb.getDb().db().collection('restaurants').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -15,7 +15,7 @@ const getSingle = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db()
-    .collection('contacts')
+    .collection('restaurants')
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -25,47 +25,51 @@ const getSingle = async (req, res, next) => {
 
 const Create = async (req, res) => {
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    name: req.body.name,
+    foodtype: req.body.foodtype,
+    foodtype2: req.body.foodtype2,
+    hoursopen: req.body.hoursopen,
+    daysopen: req.body.daysopen,
+    location: req.body.location,
+    description: req.body.description
   };
   const result = await mongodb
-    .getDb().db().collection('contacts').insertOne(contact);
+    .getDb().db().collection('restaurants').insertOne(contact);
   if (result.acknowledged){
     res.status(201).json(result);
   } else {
-    res.status(500).json(result.error || 'Something happened in the contacts while creating.');
+    res.status(500).json(result.error || 'Something happened in the restaurants while creating.');
   };
 };
 
 const Update = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    name: req.body.name,
+    foodtype: req.body.foodtype,
+    foodtype2: req.body.foodtype2,
+    hoursopen: req.body.hoursopen,
+    daysopen: req.body.daysopen,
+    location: req.body.location,
+    description: req.body.description
   };
   const response = await mongodb
-    .getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
+    .getDb().db().collection('restaurants').replaceOne({ _id: userId }, contact);
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || 'Something happened in the contacts while updating.');
+    res.status(500).json(response.error || 'Something happened in the restaurants while updating.');
   };
 };
 
 const Delete = async(req, res) => {
   const userId = new ObjectId(req.params.id)
-  const response = await mongodb.getDb().db().collection('contacts').deleteOne({_id: userId}, true); 
+  const response = await mongodb.getDb().db().collection('restaurants').deleteOne({_id: userId}, true); 
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send()
   } else {
-    res.status(500).json(response.error || 'Something happened in the contacts while deleting.');
+    res.status(500).json(response.error || 'Something happened in the restaurants while deleting.');
   };  
 };
 
