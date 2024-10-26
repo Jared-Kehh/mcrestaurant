@@ -1,2 +1,72 @@
 ###
-GET http://localhost:3000/contacts HTTP/1.1
+GET http://localhost:3000/restaurants HTTP/1.1
+
+###
+GET http://localhost:3000/restaurants/6716e2e62290cb90683744da HTTP/1.1
+
+### Create contact
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+        "name": "La Creperie",
+        "foodtype": "Crepes",
+        "foodtype2": "",
+        "hoursopen": "8:30am - 12:00pm",
+        "daysopen": "Mon - Fri",
+        "location": "Manwaring Center - Second Floor (The Crossroads)",
+        "description": "Made to order crepes"
+    }
+### PUT contact
+PUT http://localhost:3000/contacts/6716e848231972b0eb88314e HTTP/1.1
+content-type: application/json
+
+{
+        "name": "La Creperie",
+        "foodtype": "Crepes",
+        "foodtype2": "Bagels",
+        "hoursopen": "8:30am - 12:00pm",
+        "daysopen": "Mon - Fri",
+        "location": "Manwaring Center - Second Floor (The Crossroads)",
+        "description": "Made to order crepes"
+    }
+
+###
+DELETE http://localhost:3000/restaurants/6716e848231972b0eb88314e HTTP/1.1
+
+###
+GET https://mcrestaurant.onrender.com/restaurants HTTP/1.1
+
+###
+GET https://mcrestaurant.onrender.com/restaurants/6716e848231972b0eb88314e HTTP/1.1
+
+###
+POST https://mcrestaurant.onrender.com/restaurants HTTP/1.1
+content-type: application/json
+
+{
+        "name": "La Creperie",
+        "foodtype": "Crepes",
+        "foodtype2": "",
+        "hoursopen": "8:30am - 12:00pm",
+        "daysopen": "Mon - Fri",
+        "location": "Manwaring Center - Second Floor (The Crossroads)",
+        "description": "Made to order crepes"
+    }
+
+###
+PUT https://mcrestaurant.onrender.com/restaurants/6716e848231972b0eb88314e HTTP/1.1
+content-type: application/json
+
+{
+        "name": "La Creperie",
+        "foodtype": "Crepes",
+        "foodtype2": "",
+        "hoursopen": "8:30am - 12:00pm",
+        "daysopen": "Mon - Fri",
+        "location": "Manwaring Center - Second Floor (The Crossroads)",
+        "description": "Made to order crepes"
+    }
+
+###
+DELETE https://mcrestaurant.onrender.com/restaurants/6716e848231972b0eb88314e HTTP/1.1
