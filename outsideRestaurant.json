@@ -1,0 +1,11 @@
+{
+    "restaurants":{
+        "name": "Off Road Grill",
+        "foodtype": "Breakfast: Burritos, Sandwiches, Waffles, Cinnamon Rolls, and French Toast",
+        "foodtype2": "Lunch: Sandwiches, Baskets, Pizza, Burgers, Bowl, Sides, and Treats",
+        "hoursopen": "7:30am - 9:00pm, 7:30am - 10:00pm, 10:00am - 10:00pm",
+        "daysopen": "Mon - Sat",
+        "location": "STC Parking Lot on 1st West",
+        "description": ""
+    }
+}

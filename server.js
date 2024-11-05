@@ -3,6 +3,8 @@ const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 const { auth } = require('express-openid-connect');
@@ -10,10 +12,10 @@ const { auth } = require('express-openid-connect');
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: '1234JaredKeh',
-  baseURL: 'http://localhost:3000',
-  clientID: 'N1hsZzc6qVDsjcxfqnr1qlmNxWDX50R2',
-  issuerBaseURL: 'https://dev-yob0ogn6bg5av384.us.auth0.com'
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
