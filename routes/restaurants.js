@@ -13,4 +13,14 @@ router.put('/:id', restaurantsController.Update);
 
 router.delete('/:id', restaurantsController.Delete);
 
+router.get('/', restaurantsController.getAllOther);
+
+router.get('/:id', restaurantsController.getSingleOther);
+
+router.post('/', restaurantsController.CreateOther);
+
+router.put('/:id', restaurantsController.UpdateOther);
+
+router.delete('/:id', restaurantsController.DeleteOther);
+
 module.exports = router;

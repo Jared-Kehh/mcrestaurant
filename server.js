@@ -10,7 +10,7 @@ const { auth } = require('express-openid-connect');
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
+  secret: '1234JaredKeh',
   baseURL: 'http://localhost:3000',
   clientID: 'N1hsZzc6qVDsjcxfqnr1qlmNxWDX50R2',
   issuerBaseURL: 'https://dev-yob0ogn6bg5av384.us.auth0.com'
