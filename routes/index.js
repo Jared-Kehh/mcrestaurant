@@ -33,7 +33,7 @@ router.use(auth(config))
  */
 // req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in BOI' : 'Logged out');
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
   });
 
   /**
